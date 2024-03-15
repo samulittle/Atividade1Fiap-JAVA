@@ -1,6 +1,8 @@
 package br.com.gullivertraveller.hospedagem;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Reserva {
     private int id;
@@ -35,5 +37,16 @@ public class Reserva {
 
     public void setLocalizacao(String localizacao) {
         this.localizacao = localizacao;
+    }
+
+    public static void main(String[] args) {
+        Reserva reserva = new Reserva(1, new Date(), "São Paulo - SP");
+        
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE - dd/MM/yyyy", new Locale("pt", "BR"));
+        String dataFormatada = dateFormat.format(reserva.getData());
+        
+        System.out.println("ID da Reserva: " + reserva.getId());
+        System.out.println("Data da Reserva: " + dataFormatada);
+        System.out.println("Localização da Reserva: " + reserva.getLocalizacao());
     }
 }

@@ -4,42 +4,56 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hotel {
-    private List<Endereco> enderecos;
+    private String nome;
+    private String endereco;
+    private List<String> quartos;
 
-    public Hotel() {
-        this.enderecos = new ArrayList<>();
+    public Hotel(String nome, String endereco) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.quartos = new ArrayList<>();
     }
 
-    public List<Endereco> getEnderecos() {
-        return enderecos;
+    public String getNome() {
+        return nome;
     }
 
-    public void setEnderecos(List<Endereco> enderecos) {
-        this.enderecos = enderecos;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void adicionarEndereco(Endereco endereco) {
-        enderecos.add(endereco);
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void removerEndereco(Endereco endereco) {
-        enderecos.remove(endereco);
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public List<String> getQuartos() {
+        return quartos;
+    }
+
+    public void adicionarQuarto(String quarto) {
+        quartos.add(quarto);
     }
 
     public static void main(String[] args) {
-        Hotel hotel = new Hotel();
+        Hotel hotel = new Hotel("Hotel Gulliver", "Rua das Palmeiras, 123");
 
-        Endereco endereco1 = new Endereco("Rua A", "123", "São Paulo", "SP", "12345-678");
-        Endereco endereco2 = new Endereco("Avenida B", "456", "Rio de Janeiro", "RJ", "98765-432");
+      
+        System.out.println("Nome do Hotel: " + hotel.getNome());
+        System.out.println("Endereço do Hotel: " + hotel.getEndereco());
 
-        hotel.adicionarEndereco(endereco1);
-        hotel.adicionarEndereco(endereco2);
+     
+        hotel.adicionarQuarto("Quarto 101: Simples, Capacidade: 1");
+        hotel.adicionarQuarto("Quarto 201: Luxo, Capacidade: 2");
 
-        System.out.println("Endereços:");
-        for (Endereco endereco : hotel.getEnderecos()) {
-            System.out.println(endereco.getLogradouro() + ", " + endereco.getNumero() + " - "
-                    + endereco.getCidade() + "/" + endereco.getEstado() + " - "
-                    + endereco.getCep());
+        
+        System.out.println("Quartos disponíveis:");
+        List<String> quartos = hotel.getQuartos();
+        for (String quarto : quartos) {
+            System.out.println(quarto);
         }
     }
 }

@@ -1,8 +1,10 @@
 package br.com.gullivertraveller.hospedagem;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class Usuario {
     private int id;
@@ -106,6 +108,8 @@ public class Usuario {
         usuario.setNascimento(new Date());
         usuario.setUltimoAcesso(new Date());
 
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", new Locale("pt", "BR"));
+
         System.out.println("Dados do Usuário:");
         System.out.println("ID: " + usuario.getId());
         System.out.println("Nível: " + usuario.getNivel());
@@ -113,7 +117,7 @@ public class Usuario {
         System.out.println("E-mail: " + usuario.getEmail());
         System.out.println("Senha: " + usuario.getSenha());
         System.out.println("Nome: " + usuario.getNome());
-        System.out.println("Data de Nascimento: " + usuario.getNascimento());
-        System.out.println("Último Acesso: " + usuario.getUltimoAcesso());
+        System.out.println("Data de Nascimento: " + dateFormat.format(usuario.getNascimento()));
+        System.out.println("Último Acesso: " + dateFormat.format(usuario.getUltimoAcesso()));
     }
 }

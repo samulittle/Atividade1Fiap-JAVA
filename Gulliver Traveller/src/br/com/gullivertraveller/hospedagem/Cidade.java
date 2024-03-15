@@ -61,10 +61,10 @@ public class Cidade {
     public static void main(String[] args) {
         Cidade gulliverTraveller = new Cidade("Brasil", "BR", "Brasil", "BR");
 
-        // Adicionando todas as cidades do Brasil
+        
         adicionarCidadesBrasil(gulliverTraveller);
 
-        // Exibindo as cidades
+        
         List<Cidade> cidades = gulliverTraveller.getCidades();
         for (Cidade cidade : cidades) {
             System.out.println("Cidade: " + cidade.getNome() + ", Estado: " + cidade.getEstado() + ", País: " + cidade.getPais());
@@ -72,7 +72,7 @@ public class Cidade {
     }
 
     private static void adicionarCidadesBrasil(Cidade gulliverTraveller) {
-        // Região Norte
+        
         adicionarCidade(gulliverTraveller, "Acre", "AC");
         adicionarCidade(gulliverTraveller, "Amapá", "AP");
         adicionarCidade(gulliverTraveller, "Amazonas", "AM");
@@ -81,7 +81,7 @@ public class Cidade {
         adicionarCidade(gulliverTraveller, "Roraima", "RR");
         adicionarCidade(gulliverTraveller, "Tocantins", "TO");
 
-        // Região Nordeste
+       
         adicionarCidade(gulliverTraveller, "Alagoas", "AL");
         adicionarCidade(gulliverTraveller, "Bahia", "BA");
         adicionarCidade(gulliverTraveller, "Ceará", "CE");
@@ -92,19 +92,19 @@ public class Cidade {
         adicionarCidade(gulliverTraveller, "Rio Grande do Norte", "RN");
         adicionarCidade(gulliverTraveller, "Sergipe", "SE");
 
-        // Região Centro-Oeste
+        
         adicionarCidade(gulliverTraveller, "Distrito Federal", "DF");
         adicionarCidade(gulliverTraveller, "Goiás", "GO");
         adicionarCidade(gulliverTraveller, "Mato Grosso", "MT");
         adicionarCidade(gulliverTraveller, "Mato Grosso do Sul", "MS");
 
-        // Região Sudeste
+        
         adicionarCidade(gulliverTraveller, "Espírito Santo", "ES");
         adicionarCidade(gulliverTraveller, "Minas Gerais", "MG");
         adicionarCidade(gulliverTraveller, "Rio de Janeiro", "RJ");
         adicionarCidade(gulliverTraveller, "São Paulo", "SP");
 
-        // Região Sul
+        
         adicionarCidade(gulliverTraveller, "Paraná", "PR");
         adicionarCidade(gulliverTraveller, "Rio Grande do Sul", "RS");
         adicionarCidade(gulliverTraveller, "Santa Catarina", "SC");
